@@ -9,7 +9,7 @@ import QtQuick.Controls.Styles 1.4
 
 ApplicationWindow {
     visible: true
-    width: 600; height: 500
+    width: 1000; height: 800
     color: "lightsteelblue"
 
 
@@ -41,7 +41,7 @@ ApplicationWindow {
 
         Menu {
             id: help
-            title: "View"
+            title: "Help"
             MenuItem { text: "Help"}
             MenuItem { text: "About"}
         }
@@ -59,10 +59,40 @@ ApplicationWindow {
         color: "orange"
 
         Text {
+            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: qsTr("Enter the data")
+        }
+
+        Text {
             id: inputi
             text: qsTr("Enter some value")
             anchors.top: parent.top
             anchors.topMargin: 20
+            anchors.left: parent.left
+        }
+
+        Text {
+            id: inputi1
+            text: qsTr("Enter some value")
+            anchors.top: inputi.bottom
+            anchors.topMargin: 10
+            anchors.left: parent.left
+        }
+
+        Text {
+            id: inputi2
+            text: qsTr("Enter some value")
+            anchors.top: inputi1.bottom
+            anchors.topMargin: 10
+            anchors.left: parent.left
+        }
+
+        Text {
+            id: inputi3
+            text: qsTr("Enter some value")
+            anchors.top: inputi2.bottom
+            anchors.topMargin: 10
             anchors.left: parent.left
         }
 
@@ -73,6 +103,28 @@ ApplicationWindow {
             anchors.verticalCenter: inputi.verticalCenter
             anchors.leftMargin: 10
         }
+        TextField {
+            id: inputfield1
+            anchors.left: inputi1.right
+            anchors.right: parent.right
+            anchors.verticalCenter: inputi1.verticalCenter
+            anchors.leftMargin: 10
+        }
+        TextField {
+            id: inputfield2
+            anchors.left: inputi2.right
+            anchors.right: parent.right
+            anchors.verticalCenter: inputi2.verticalCenter
+            anchors.leftMargin: 10
+        }
+        TextField {
+            id: inputfield3
+            anchors.left: inputi3.right
+            anchors.right: parent.right
+            anchors.verticalCenter: inputi3.verticalCenter
+            anchors.leftMargin: 10
+        }
+
 
         Button {
             id: pullaz
@@ -99,7 +151,7 @@ ApplicationWindow {
             id: vor
             width: parent.width/5
             title: "Vorspannkraft"
-            Rectangle { color: "red"
+            Rectangle { color: "brown"
 
 
             }
